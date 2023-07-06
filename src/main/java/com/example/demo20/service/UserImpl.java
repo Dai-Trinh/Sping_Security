@@ -1,6 +1,7 @@
 package com.example.demo20.service;
 
 
+import com.example.demo20.model.TaiKhoan;
 import com.example.demo20.responsitory.TaiKhoanResponesitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,5 +19,9 @@ public class UserImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         return taiKhoanResponesitory.getByUsername(username);
+    }
+
+    public TaiKhoan saveTaiKhoan(TaiKhoan taiKhoan){
+        return taiKhoanResponesitory.save(taiKhoan);
     }
 }

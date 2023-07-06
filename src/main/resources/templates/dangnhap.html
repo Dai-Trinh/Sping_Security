@@ -8,11 +8,18 @@
 <body>
 <div></div>
 
-<form action="http://localhost:8080/dang-ky" method="post">
+<form action="http://localhost:8080/login_processing_url" method="post">
 
   <p>User name: <br> <input type="text" name="username"></p>
   <p>Password: <br> <input type="password" name="password"></p>
 
+  <div>
+    <input type="checkbox" name="remember-me"> Lưu mật khẩu
+  </div>
+
+  <div th:if="${b == 'true'}">
+    Đăng nhập không thành công
+  </div>
 
   <p><input type="submit" value="Đăng nhập"></p>
 
